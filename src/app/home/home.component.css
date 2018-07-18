@@ -1,0 +1,8 @@
+div > p {
+    background: green;
+    border-right: 2px solid;
+    text-align: center;
+    color:white;
+    font-size: 20px;padding: 5px;
+}
+

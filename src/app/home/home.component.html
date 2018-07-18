@@ -17,25 +17,24 @@
     -->
 
     <h3>SAMPLE-NUMBER ITEM</h3>
-    <owl-carousel 
-        [options]="{items: 3, dots: true, navigation: true}"
+    <owl-carousel #owlElement  
+        [options]="{items: 3, dots: true, navigation: true, onInitialize:customFun}"
         [items]="items1"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         <div *ngFor="let item of items1">
-          <p style="background: cadetblue;border-right: 2px solid;text-align: center;color:white;font-size: 20px;padding: 5px;">{{ item }}</p>
+          <p>{{ item }}</p>
         </div>
      </owl-carousel>
 
 
-     <owl-carousel 
+    <h3>SAMPLE IMAGE ITEM</h3>
+     <owl-carousel #owlElement  
         [carouselClasses]="['owl-theme', 'row', 'sliding']"
         [items]="items1"
-        [options]="{items: 3, dots: true, navigation: true}">
+        [options]="{items: 3, dots: true, navigation: true, autoplay:true,  lazyLoad:true,  onLoadLazy:lazyload1, onLoadedLazy:lazyload2}">
         <div *ngFor="let img of images">
-          <img src="http://lorempixel.com/400/200/{{img}}"/>
+          <img  data-src="http://lorempixel.com/400/200/{{img}}"/>
         </div>
-     </owl-carousel>`
-
-
+     </owl-carousel>
 
 </div>
