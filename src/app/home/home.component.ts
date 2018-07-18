@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
 
   doSomething(event, imgRef) {
 
-    const rtime = Math.floor((Math.random() * 2000) + 1500);
+    const rtime = Math.floor((Math.random() * 4000) + 1500);
 
     setTimeout(() => {
       imgRef.display = 'block';
