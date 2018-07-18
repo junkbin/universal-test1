@@ -47,4 +47,4 @@ Moved to [/angular/universal/blob/master/docs/gotchas.md](https://github.com/ang
 
 
 ./node_modules/.bin/ng  build --prod --base-href "https://junkbin.github.io/universal-test1/"
-./node_modules/.bin/ngh -d dist/universal-test1
+./node_modules/.bin/ngh -d dist/browser
