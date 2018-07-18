@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   public images: Array<string> = ['sports', 'abstract', 'people', 'transport', 'city', 'technics', 'nightlife', 'animals'];
   public imagesList: Array<string> = [];
 
+  public imageList1: Array<any> = [];
+
   constructor() {}
 
   ngOnInit() {
@@ -23,6 +25,16 @@ export class HomeComponent implements OnInit {
 
     this.images.forEach((item) => {
       this.imagesList.push(`http://lorempixel.com/400/200/${item}`);
+    });
+
+    this.images.forEach( (item) => {
+      const imgsrc = `http://lorempixel.com/400/200/${item}`;
+      const imgref = {
+        'imgsrc' : imgsrc,
+        'display' : 'none'
+      };
+
+      this.imageList1.push(imgref);
     });
 
     console.log(this.imagesList);
@@ -38,6 +50,16 @@ export class HomeComponent implements OnInit {
 
   lazyload2(e) {
     console.log('Lazy Init Done: ',  e);
+  }
+
+  doSomething(event, imgItem) {
+    console.log(event, imgItem);
+    console.log(event.currentTarget);
+
+    const newsrc = `http://lorempixel.com/400/200/${imgItem}`;
+    console.log(newsrc);
+
+    event.currentTarget.style.display = 'block';
   }
 
 }

@@ -1,42 +1,29 @@
 <div>
-    {{message}}
-
     <div>
         {{images}}
     </div>
-
-    <h3>SAMPLE-NUMBER ITEM</h3>
-    <owl-carousel 
-        [options]="{items: 3, dots: true, navigation: true, onInitialize:customFun}"
-        [items]="items1"
-        [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div *ngFor="let item of items1">
-          <p>{{ item }}</p>
-        </div>
-     </owl-carousel>
-
 
     <h3>SAMPLE IMAGE ITEM</h3>
     <owl-carousel #owlElement  
         [options]="{items: 3, dots: true, navigation: true, autoplay:true,  lazyLoad:true, onInitialized:init1,  onLoadLazy:lazyload1, onLoadedLazy:lazyload2}"
         [items]="items1"
-        [carouselClasses]="['owl-theme', 'row', 'sliding']"
-    >
-        <div *ngFor="let img of images">
-          <img data-src="http://lorempixel.com/400/200/{{img}}"/>
+        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        
+        <div *ngFor="let iobj of imagesList1">
+          <img src="assets/loader.gif" >  
+          <img data-src="{{iobj.imgsrc}}" (load)="doSomething($event, iobj)" style="display: none"/>
         </div>
      </owl-carousel>
 
 
-    <h3>SAMPLE IMAGE ITEMM</h3>
+    <!--<h3>SAMPLE IMAGE ITEMM</h3>
     <owl-carousel 
         [options]="{items: 3, dots: true, navigation: true, autoplay:true,  lazyLoad:true, onInitialized:init1,  onLoadLazy:lazyload1, onLoadedLazy:lazyload2}"
         [items]="items1"
-        [carouselClasses]="['owl-theme', 'row', 'sliding']"
-    >
+        [carouselClasses]="['owl-theme', 'row', 'sliding']">
         <div *ngFor="let img of imagesList">
           <div class="thumbnail-image" [ngStyle]="{'background': 'url(assets/loader.gif) no-repeat scroll center center / 80px 80px'}"></div>
         </div>
-     </owl-carousel>
+     </owl-carousel>-->
 
 </div>
