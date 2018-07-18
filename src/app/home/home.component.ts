@@ -14,12 +14,18 @@ export class HomeComponent implements OnInit {
   public items1: Array<number> = [1, 2, 3, 4, 5];
 
   public images: Array<string> = ['sports', 'abstract', 'people', 'transport', 'city', 'technics', 'nightlife', 'animals'];
-
+  public imagesList: Array<string> = [];
 
   constructor() {}
 
   ngOnInit() {
     this.message = 'Hello Home';
+
+    this.images.forEach((item) => {
+      this.imagesList.push(`http://lorempixel.com/400/200/${item}`);
+    });
+
+    console.log(this.imagesList);
   }
 
   init1(e) {
