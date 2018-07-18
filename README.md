@@ -44,3 +44,7 @@ Moved to [/angular/universal/blob/master/docs/gotchas.md](https://github.com/ang
 
 # License
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)
+
+
+./node_modules/.bin/ng  build --prod --base-href "https://santosh.github.io/junkbin/universal-test1/"
+./node_modules/.bin/ngh

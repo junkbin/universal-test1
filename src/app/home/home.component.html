@@ -6,8 +6,8 @@
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         
         <div *ngFor="let iobj of imageList1">
-          <img src="assets/loader.gif" height="200" [style.display]="iobj.display? 'none' : 'block' ">  
-          <img [src]="iobj.imgsrc" height="250" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
+          <img src="assets/loader.gif" height="200px" [style.display]="iobj.display? 'none' : 'block' ">  
+          <img [src]="iobj.imgsrc" height="200px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
         </div>
      </owl-carousel>
 
@@ -19,8 +19,8 @@
          [carouselClasses]="['owl-theme', 'row', 'sliding']">
          
          <div *ngFor="let iobj of imageList1">
-           <img src="assets/loader.gif" height="200" [style.display]="iobj.display? 'none' : 'block' ">  
-           <img [src]="iobj.imgsrc" height="250" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
+           <img src="assets/loader.gif" height="200px" [style.display]="iobj.display? 'none' : 'block' ">  
+           <img [src]="iobj.imgsrc" height="200px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
          </div>
       </owl-carousel>
 </div>
