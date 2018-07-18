@@ -27,14 +27,34 @@ export class HomeComponent implements OnInit {
       this.imagesList.push(`http://lorempixel.com/400/200/${item}`);
     });
 
-    this.images.forEach( (item) => {
-      const imgsrc = `http://lorempixel.com/400/200/${item}`;
-      const imgref = {
-        'imgsrc' : imgsrc,
-        'display' : 'none'
-      };
+    this.imageList1.push({
+      'display' : false,
+      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-wildlife.jpg'
+    });
 
-      this.imageList1.push(imgref);
+    this.imageList1.push({
+      'display' : false,
+      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-specially-abled.jpg'
+    });
+
+    this.imageList1.push({
+      'display' : false,
+      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-festival.jpg'
+    });
+
+    this.imageList1.push({
+      'display' : false,
+      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-womens.jpg'
+    });
+
+    this.imageList1.push({
+      'display' : false,
+      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-seniors.jpg'
+    });
+
+    this.imageList1.push({
+      'display' : false,
+      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-honeymoon.jpg'
     });
 
     console.log(this.imagesList);
@@ -44,22 +64,14 @@ export class HomeComponent implements OnInit {
     console.log('Init1', e);
   }
 
-  lazyload1(e) {
-    console.log('Lazy Init Start',  e);
-  }
 
-  lazyload2(e) {
-    console.log('Lazy Init Done: ',  e);
-  }
+  doSomething(event, imgRef) {
 
-  doSomething(event, imgItem) {
-    console.log(event, imgItem);
-    console.log(event.currentTarget);
+    const rtime = Math.floor((Math.random() * 2000) + 1500);
 
-    const newsrc = `http://lorempixel.com/400/200/${imgItem}`;
-    console.log(newsrc);
-
-    event.currentTarget.style.display = 'block';
+    setTimeout(() => {
+      imgRef.display = 'block';
+    }, rtime);
   }
 
 }

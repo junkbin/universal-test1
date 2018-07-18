@@ -1,21 +1,26 @@
 <div>
-    <div>
-        {{images}}
-    </div>
-
-    <h3>SAMPLE IMAGE ITEM</h3>
+    <h3>Carousel Image Item - 1</h3>
     <owl-carousel #owlElement  
-        [options]="{items: 3, dots: true, navigation: true, autoplay:true,  lazyLoad:true, onInitialized:init1,  onLoadLazy:lazyload1, onLoadedLazy:lazyload2}"
+        [options]="{items: 3, dots: true, navigation: true, autoplay:true}"
         [items]="items1"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         
-        <div *ngFor="let iobj of imagesList1">
-          <img src="assets/loader.gif" >  
-          <img data-src="{{iobj.imgsrc}}" (load)="doSomething($event, iobj)" style="display: none"/>
+        <div *ngFor="let iobj of imageList1">
+          <img src="assets/loader.gif" height="200" [style.display]="iobj.display? 'none' : 'block' ">  
+          <img [src]="iobj.imgsrc" height="250" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
         </div>
      </owl-carousel>
 
 
-    
-
+     <h3>Carousel Image Item - 2</h3>
+     <owl-carousel #owlElement  
+         [options]="{items: 3, dots: true, navigation: true, autoplay:true}"
+         [items]="items1"
+         [carouselClasses]="['owl-theme', 'row', 'sliding']">
+         
+         <div *ngFor="let iobj of imageList1">
+           <img src="assets/loader.gif" height="200" [style.display]="iobj.display? 'none' : 'block' ">  
+           <img [src]="iobj.imgsrc" height="250" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
+         </div>
+      </owl-carousel>
 </div>
