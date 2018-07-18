@@ -22,20 +22,12 @@ export class HomeComponent implements OnInit {
     this.message = 'Hello Home';
   }
 
-  customFun() {
-    console.log('Event handling owl-carousel!!!.');
-  }
-
-  fun1() {
-    console.log('FUN!');
-  }
-
-  funt1(e) {
-    console.log(e);
+  init1(e) {
+    console.log('Init1', e);
   }
 
   lazyload1(e) {
-    console.log('Lazy INit',  e);
+    console.log('Lazy Init Start',  e);
   }
 
   lazyload2(e) {
