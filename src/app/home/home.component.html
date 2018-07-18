@@ -1,0 +1,41 @@
+<div>
+    {{message}}
+
+    <div>
+        {{images}}
+    </div>
+
+    <!--
+        <owl-carousel
+            [options]="{items: 3, dots: false, navigation: false}"
+            [items]="images"
+            [carouselClasses]="['owl-theme', 'row', 'sliding']">
+            <div class="item" *ngFor="let image of images; let i = index">
+                <div class="thumbnail-image" [ngStyle]="{'background': 'url(abc.jpg) no-repeat scroll center center / 100px 100px'}"></div>
+            </div>
+        </owl-carousel>
+    -->
+
+    <h3>SAMPLE-NUMBER ITEM</h3>
+    <owl-carousel 
+        [options]="{items: 3, dots: true, navigation: true}"
+        [items]="items1"
+        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <div *ngFor="let item of items1">
+          <p style="background: cadetblue;border-right: 2px solid;text-align: center;color:white;font-size: 20px;padding: 5px;">{{ item }}</p>
+        </div>
+     </owl-carousel>
+
+
+     <owl-carousel 
+        [carouselClasses]="['owl-theme', 'row', 'sliding']"
+        [items]="items1"
+        [options]="{items: 3, dots: true, navigation: true}">
+        <div *ngFor="let img of images">
+          <img src="http://lorempixel.com/400/200/{{img}}"/>
+        </div>
+     </owl-carousel>`
+
+
+
+</div>
