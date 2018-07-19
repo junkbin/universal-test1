@@ -68,9 +68,9 @@ export class HomeComponent implements OnInit {
 
   doSomething(event, imgRef) {
     try {
-      let rtime = 500;
+      let rtime = 100;
       if (this.loaderDelay) {
-        rtime = (rtime <= 3000) ? rtime : 500;
+        rtime = (rtime <= 3000) ? rtime : 100;
       }
 
       setTimeout(() => {
