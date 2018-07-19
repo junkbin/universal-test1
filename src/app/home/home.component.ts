@@ -1,4 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import {OwlCarousel} from 'ngx-owl-carousel';
 
 
@@ -10,23 +12,16 @@ import {OwlCarousel} from 'ngx-owl-carousel';
 export class HomeComponent implements OnInit {
   @ViewChild('owlElement') owlElement: OwlCarousel;
 
-  public message: string;
-  public items1: Array<number> = [1, 2, 3, 4, 5];
-
-  public images: Array<string> = ['sports', 'abstract', 'people', 'transport', 'city', 'technics', 'nightlife', 'animals'];
-  public imagesList: Array<string> = [];
-
+  public loaderDelay: number;
   public imageList1: Array<any> = [];
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.loaderDelay = (params['d']) ? params['d'] : 0;
+    });
+  }
 
   ngOnInit() {
-    this.message = 'Hello Home';
-
-    this.images.forEach((item) => {
-      this.imagesList.push(`http://lorempixel.com/400/200/${item}`);
-    });
-
     this.imageList1.push({
       'display' : false,
       'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-wildlife.jpg'
@@ -57,7 +52,6 @@ export class HomeComponent implements OnInit {
       'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-honeymoon.jpg'
     });
 
-    console.log(this.imagesList);
   }
 
   init1(e) {
@@ -66,12 +60,18 @@ export class HomeComponent implements OnInit {
 
 
   doSomething(event, imgRef) {
+    try {
+      let rtime = 500;
+      if (this.loaderDelay) {
+        rtime = (rtime <= 3000) ? rtime : 500;
+      }
 
-    const rtime = Math.floor((Math.random() * 4000) + 1500);
-
-    setTimeout(() => {
-      imgRef.display = 'block';
-    }, rtime);
+      setTimeout(() => {
+        imgRef.display = 'block';
+      }, rtime);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 }
