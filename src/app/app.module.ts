@@ -25,6 +25,6 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     OwlModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }
