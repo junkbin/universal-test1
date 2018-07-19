@@ -1,18 +1,20 @@
 <div class="container-fluid">
-    <div class="row bg-light" style="height: 80px;">
-
+    <div class="row bg-light fixed-top" style="height: 80px;">
+        <div class="col-sm-3 make-center">
+          <img src="https://img.veenaworld.com/vw-assets/svg/veenaworldlogoNew.svg" alt="">
+        </div>
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:90px">
   <owl-carousel #owlElement  
     [options]="{items: 3, dots: true, navigation: true}"
     [items]="imageList1"
     [carouselClasses]="['owl-theme', 'row', 'sliding']">
     
-    <div *ngFor="let iobj of imageList3">
-      <img src="assets/loader.gif" height="200px" [style.display]="iobj.display? 'none' : 'block' ">  
-      <img [src]="iobj.imgsrc" height="200px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
+    <div *ngFor="let iobj of imageList3" >
+      <img src="assets/loader.gif" height="250px" [style.display]="iobj.display? 'none' : 'block' ">  
+      <img [src]="iobj.imgsrc" height="250px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
     </div>
   </owl-carousel>
 </div>
@@ -20,11 +22,11 @@
 <div class="container">
     <h3>Speciality Tour Packages</h3>
     <owl-carousel #owlElement  
-        [options]="{items: 3, dots: true, navigation: true}"
+        [options]="{items: 4, dots: true, navigation: true}"
         [items]="imageList1"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         
-        <div *ngFor="let iobj of imageList1">
+        <div *ngFor="let iobj of imageList1" style="margin-right:5px;">
           <img src="assets/loader.gif" height="300px" [style.display]="iobj.display? 'none' : 'block' ">  
           <img [src]="iobj.imgsrc" height="300px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
         </div>
@@ -33,11 +35,11 @@
 
      <h3>International Tour Packages</h3>
      <owl-carousel #owlElement  
-         [options]="{items: 3, dots: true, navigation: true}"
+         [options]="{items: 4, dots: true, navigation: true}"
          [items]="imageList1"
          [carouselClasses]="['owl-theme', 'row', 'sliding']">
          
-         <div *ngFor="let iobj of imageList2">
+         <div *ngFor="let iobj of imageList2" style="margin-right:5px;">
            <img src="assets/loader.gif" height="300px" [style.display]="iobj.display? 'none' : 'block' ">  
            <img [src]="iobj.imgsrc" height="300px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
          </div>

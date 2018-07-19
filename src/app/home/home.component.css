@@ -8,3 +8,8 @@ div > p {
 
 .owl-height {min-height: 500px; height:auto !important; height: 500px; }
 
+.make-center {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
