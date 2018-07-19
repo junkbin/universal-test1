@@ -4,29 +4,42 @@
     </div>
 </div>
 
+<div class="container-fluid">
+  <owl-carousel #owlElement  
+    [options]="{items: 3, dots: true, navigation: true}"
+    [items]="imageList1"
+    [carouselClasses]="['owl-theme', 'row', 'sliding']">
+    
+    <div *ngFor="let iobj of imageList3">
+      <img src="assets/loader.gif" height="200px" [style.display]="iobj.display? 'none' : 'block' ">  
+      <img [src]="iobj.imgsrc" height="200px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
+    </div>
+  </owl-carousel>
+</div>
+
 <div class="container">
-    <h3>Carousel Image Item - 1A</h3>
+    <h3>Speciality Tour Packages</h3>
     <owl-carousel #owlElement  
-        [options]="{items: 3, dots: true, navigation: true, autoplay:true}"
+        [options]="{items: 3, dots: true, navigation: true}"
         [items]="imageList1"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         
         <div *ngFor="let iobj of imageList1">
-          <img src="assets/loader.gif" height="200px" [style.display]="iobj.display? 'none' : 'block' ">  
-          <img [src]="iobj.imgsrc" height="200px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
+          <img src="assets/loader.gif" height="300px" [style.display]="iobj.display? 'none' : 'block' ">  
+          <img [src]="iobj.imgsrc" height="300px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
         </div>
      </owl-carousel>
 
 
-     <h3>Carousel Image Item - 1B</h3>
+     <h3>International Tour Packages</h3>
      <owl-carousel #owlElement  
-         [options]="{items: 3, dots: true, navigation: true, autoplay:true}"
+         [options]="{items: 3, dots: true, navigation: true}"
          [items]="imageList1"
          [carouselClasses]="['owl-theme', 'row', 'sliding']">
          
-         <div *ngFor="let iobj of imageList1">
-           <img src="assets/loader.gif" height="200px" [style.display]="iobj.display? 'none' : 'block' ">  
-           <img [src]="iobj.imgsrc" height="200px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
+         <div *ngFor="let iobj of imageList2">
+           <img src="assets/loader.gif" height="300px" [style.display]="iobj.display? 'none' : 'block' ">  
+           <img [src]="iobj.imgsrc" height="300px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
          </div>
       </owl-carousel>
 </div>

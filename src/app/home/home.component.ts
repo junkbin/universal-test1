@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
 
   public loaderDelay: number;
   public imageList1: Array<any> = [];
+  public imageList2: Array<any> = [];
+  public imageList3: Array<any> = [];
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
@@ -22,36 +24,41 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.imageList1.push({
-      'display' : false,
-      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-wildlife.jpg'
+    const list1 = [
+      'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-specially-abled.jpg',
+      'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-wildlife.jpg',
+      'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-festival.jpg',
+      'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-womens.jpg',
+      'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-seniors.jpg',
+      'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-honeymoon.jpg'
+    ];
+
+    const list2 = [
+      'https://img.veenaworld.com/group-tours/world/africa/afsf/afsf-thb.jpg',
+      'https://img.veenaworld.com/group-tours/world/japan-china-korea-taiwan/ascn/ascn-thb.jpg',
+      'https://img.veenaworld.com/group-tours/world/south-east-asia/ashk/ashk-thb.jpg',
+      'https://img.veenaworld.com/group-tours/world/south-east-asia/asza/asza-thb.jpg'
+    ];
+
+    const list3 = [
+      'https://img.veenaworld.com/home/banner/north-east-jewels-bnn-18072018.jpg',
+      'https://img.veenaworld.com/home/banner/wonders-of-australia-bnn-18072018.jpg',
+      'https://img.veenaworld.com/home/banner/swiss-paris-bnn-18072018.jpg',
+      'https://img.veenaworld.com/home/banner/tours-for-specially-abled-bnn-18072018.jpg',
+      'https://img.veenaworld.com/home/banner/winter-offer-bnn-16072018.jpg'
+    ];
+
+    list1.forEach((item) => {
+      this.imageList1.push({'display' : false, 'imgsrc': item});
     });
 
-    this.imageList1.push({
-      'display' : false,
-      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-specially-abled.jpg'
+    list2.forEach((item) => {
+      this.imageList2.push({'display' : false, 'imgsrc': item});
     });
 
-    this.imageList1.push({
-      'display' : false,
-      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-festival.jpg'
+    list3.forEach((item) => {
+      this.imageList3.push({'display' : false, 'imgsrc': item});
     });
-
-    this.imageList1.push({
-      'display' : false,
-      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-womens.jpg'
-    });
-
-    this.imageList1.push({
-      'display' : false,
-      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-seniors.jpg'
-    });
-
-    this.imageList1.push({
-      'display' : false,
-      'imgsrc': 'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-honeymoon.jpg'
-    });
-
   }
 
   init1(e) {
