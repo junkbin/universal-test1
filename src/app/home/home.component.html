@@ -26,7 +26,7 @@
         [items]="imageList1"
         [carouselClasses]="['owl-theme', 'row', 'sliding']">
         
-        <div *ngFor="let iobj of imageList1" style="margin-right:5px;">
+        <div *ngFor="let iobj of imageList1" style="margin-right:10px;">
           <img src="assets/loader.gif" height="300px" [style.display]="iobj.display? 'none' : 'block' ">  
           <img [src]="iobj.imgsrc" height="300px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
         </div>
@@ -39,7 +39,7 @@
          [items]="imageList1"
          [carouselClasses]="['owl-theme', 'row', 'sliding']">
          
-         <div *ngFor="let iobj of imageList2" style="margin-right:5px;">
+         <div *ngFor="let iobj of imageList2" style="margin-right:10px;">
            <img src="assets/loader.gif" height="300px" [style.display]="iobj.display? 'none' : 'block' ">  
            <img [src]="iobj.imgsrc" height="300px" (load)="doSomething($event, iobj)" [style.display]="iobj.display? 'block' : 'none' "/>
          </div>
