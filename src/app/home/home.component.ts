@@ -41,11 +41,11 @@ export class HomeComponent implements OnInit {
     ];
 
     const list3 = [
-      'https://img.veenaworld.com/home/banner/north-east-jewels-bnn-18072018.jpg',
-      'https://img.veenaworld.com/home/banner/wonders-of-australia-bnn-18072018.jpg',
-      'https://img.veenaworld.com/home/banner/swiss-paris-bnn-18072018.jpg',
-      'https://img.veenaworld.com/home/banner/tours-for-specially-abled-bnn-18072018.jpg',
-      'https://img.veenaworld.com/home/banner/winter-offer-bnn-16072018.jpg'
+      'https://betaimg.veenaworld.com/home/banner/honeymoon-kerala-bnn-30072018.jpg',
+      'https://betaimg.veenaworld.com/home/banner/turkey-jewels-bnn-30072018.jpg',
+      'https://betaimg.veenaworld.com/home/banner/women-special-bnn-30072018.jpg',
+      'https://betaimg.veenaworld.com/home/banner/winter-offer-bnn-30072018.jpg',
+      'https://betaimg.veenaworld.com/home/banner/dubai-with-burj-khalifa-bnn-30072018.jpg'
     ];
 
     list1.forEach((item) => {
