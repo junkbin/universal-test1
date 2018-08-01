@@ -24,6 +24,13 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    let loaderDisplay = false;
+    this.route.queryParams.subscribe(params => {
+      if (params['d']) {
+        loaderDisplay = true;
+      }
+    });
+
     const list1 = [
       'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-specially-abled.jpg',
       'https://img.veenaworld.com/home/Speciality-Package-Thb/speciality-thb-wildlife.jpg',
@@ -49,15 +56,15 @@ export class HomeComponent implements OnInit {
     ];
 
     list1.forEach((item) => {
-      this.imageList1.push({'display' : false, 'imgsrc': item});
+      this.imageList1.push({'display' : true, 'imgsrc': item});
     });
 
     list2.forEach((item) => {
-      this.imageList2.push({'display' : false, 'imgsrc': item});
+      this.imageList2.push({'display' : true, 'imgsrc': item});
     });
 
     list3.forEach((item) => {
-      this.imageList3.push({'display' : false, 'imgsrc': item});
+      this.imageList3.push({'display' : true, 'imgsrc': item});
     });
   }
 
@@ -68,6 +75,7 @@ export class HomeComponent implements OnInit {
 
   doSomething(event, imgRef) {
     try {
+      console.log(this.loaderDelay);
       let rtime = 100;
       if (this.loaderDelay) {
         rtime = (rtime <= 3000) ? rtime : 100;
